@@ -3,6 +3,8 @@
 
 Simple and basic serial monitor app built with electron, Node-Serialport, Bootstrap and Vue.js
 
+Many thanks to [@johnny-five-io](https://github.com/johnny-five-io). This project was based the [electron-serialport](https://github.com/johnny-five-io/electron-serialport) project
+
 
 **Clone and run for a quick way to see Electron and Serialport in action.**
 
