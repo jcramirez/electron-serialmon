@@ -35,6 +35,12 @@ npm install
 npm start
 ```
 
+### To build native Mac or Windows apps run the following command:
+
+```bash
+npm run-script packager
+```
+
 Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/).
 
 ## Other Example Apps
