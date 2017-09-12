@@ -41,6 +41,10 @@ npm start
 npm run-script packager
 ```
 
+See documentation for [electron-packager](https://www.npmjs.com/package/electron-packager)
+
+
+
 Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/).
 
 ## Other Example Apps
