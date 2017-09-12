@@ -7,17 +7,7 @@ let ser = null
 let tmpScroll = 0
 let scrollDown = true
 
-Serialport.list((err, ports) => {
-  if (err) {
-    return
-  } else {
-    vueApp.ports = ports
-  }
-
-  if (ports.length === 0) {
-    vueApp.selectedPort = 'No ports discovered'
-  }
-})
+updateSerialPortList()
 
 let vueApp = new Vue({
   el: '#app',
@@ -50,6 +40,8 @@ let vueApp = new Vue({
           vueApp.selectedPort = 'select port'
           ser = null
           vueApp.isOpen = false
+
+          updateSerialPortList()
         })
         return
       }
@@ -165,4 +157,22 @@ function resizeTextarea () {
   let height = size[1]
   vueApp.textHeight = height - offset
   // console.log(`size: ${vueApp.textHeight}`) // debug
+}
+
+/**
+ *  updates the list of available serial ports
+ */
+function updateSerialPortList () {
+  Serialport.list((err, ports) => {
+    if (err) {
+      return
+    } else {
+      // update the vue variable for serial ports
+      vueApp.ports = ports
+    }
+
+    if (ports.length === 0) {
+      vueApp.selectedPort = 'No ports discovered'
+    }
+  })
 }
