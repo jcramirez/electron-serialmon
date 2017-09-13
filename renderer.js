@@ -50,6 +50,10 @@ let vueApp = new Vue({
       // make sure that there is no existing port open
       closeSerial(ser)
         .then(() => {
+          if (vueApp.baudrate === '' | vueApp.baudrate === undefined) {
+            vueApp.updateData(`ERR: Select a valid baudrate\n`)
+            return
+          }
           // change open button to close
           vueApp.portStatus.msg = 'Close'
           vueApp.portStatus.status = true
@@ -59,7 +63,7 @@ let vueApp = new Vue({
 
           console.log(`port: ${vueApp.selectedPort}`)
           ser = new Serial(vueApp.selectedPort, {
-            baudRate: vueApp.baudrate,
+            baudRate: parseInt(vueApp.baudrate),
             parser: Serial.parsers.readline('\n')
           })
 

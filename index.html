@@ -6,9 +6,19 @@
     <title>SerialMonitor</title>
     <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
 
+    <style>
+      textarea {
+        resize: none;
+      }
+
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+
   </head>
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <div class="container">
 
         <div class="row well well-lg">
@@ -30,7 +40,7 @@
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon">Baudrate</span>
-                  <input v-model="baudrate" class="form-control" type="text" placeholder=v-bind:id="baudrate" :disabled="isOpen">
+                  <input v-model="baudrate" class="form-control" type="text" :disabled="isOpen">
                 </div>
               </div>
           </div>
