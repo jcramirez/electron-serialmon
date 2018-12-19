@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>PCU CFG tool v 1.1.0</title>
+  <title>Virtual Line Card</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -18,86 +18,7 @@
       [v-cloak] {
         display: none;
       }
-
-    .entry-field {
-      min-width: 123px;
-    }
-
-
-      .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-      .margin-off {
-        margin-right: -18px;
-      }
-
-      .bottom-place {
-        position: absolute;
-        bottom: 0px;
-      }
-
-      #bar-3 { width: 10px; height: 50px; background: green;}
-      #bar-2 { width: 10px; height: 40px; background: green;}
-      #bar-1 { width: 10px; height: 30px; background: green;}
-      #bar-0 { width: 10px; height: 20px; background: green;}
-    </style>
+  </style>
 
 </head>
 
@@ -140,41 +61,6 @@ input:checked + .slider:before {
       </div>
       <!-- row  -->
 
-    </div>
-
-    <div class="container-fluid">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text entry-field">NWK ID (dec)</div>
-                </div>
-                <input v-model="networkId" maxlength="4" class="form-control entry-field" type="text">
-              </div>
-
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text entry-field">Device ID (0x)</div>
-                </div>
-                <input v-model="devId" maxlength="6" class="form-control entry-field" type="text">
-              </div>
-          </div>
-          </div>
-
-          <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text entry-field">Long Tag (str)</div>
-                      </div>
-                      <input v-model="longTag" maxlength="32" class="form-control entry-field" type="text">
-                    </div>
-              </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="container-fluid">
