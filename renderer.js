@@ -27,6 +27,10 @@ let vueApp = new Vue({
     selectPort: function (e) {
       this.selectedPort = e.target.innerHTML
     },
+    
+    updatePorts: function () {
+      updateSerialPortList()
+    },
 
     openSelectedPort: function (e) {
       // if we are closing the port that was open
