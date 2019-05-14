@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Virtual Line Card</title>
+  <title>Electron Serial Monitor</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -20,6 +20,11 @@
       }
   </style>
 
+  <script>
+    const pjson = require('./package.json')
+    document.title = `Electron Serial Monitor v${pjson.version}`
+  </script>
+  
 </head>
 
 <body>
@@ -31,7 +36,7 @@
           <ul class="nav nav-pills">
             <li class="dropdown" v-bind:class="{disabled: isOpen}">
               <a class="dropdown-toggle" v-bind:class="{disabled: isOpen}" data-toggle="dropdown" href="#"
-                aria-expanded="false">
+                aria-expanded="false" v-on:click="updatePorts">
                 {{selectedPort}} <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
